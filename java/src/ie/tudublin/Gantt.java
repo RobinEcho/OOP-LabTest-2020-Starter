@@ -1,3 +1,6 @@
+//size can be changed as you wish because this size is fine for me
+//Dont forget about text size. they are all need to be changed
+
 package ie.tudublin;
 
 import java.util.ArrayList;
@@ -163,13 +166,12 @@ public void mouseDragged()
         int targetline = (int)curline + 1;
         
         //set start date
-        if(mouseX >= border_left - blank/4 && mouseX <= border_left+blank/4 && mouseY >= header && mouseY <= header + 2 * textsize)
+        if(mouseX >= formX && mouseX <= border_left+blank/4 && mouseY >= header && mouseY <= header + 2 * textsize)
         {
           System.out.println("start date choosen");
           
           if(mouseX < border_right - blank)
           {
-            println("start: "+ t.getStart()+" targetline: "+targetline);
             t.setStart(targetline);
             border_left = (t.getStart() * blank) + formX;
           }
@@ -180,13 +182,12 @@ public void mouseDragged()
         }
         
         //set end date
-        if(mouseX >= border_right - blank/4 && mouseX <= border_right + blank/4 && mouseY >= header && mouseY <= header + 2 * textsize)
+        if(mouseX >= formX && mouseX <= border_right + blank/4 && mouseY >= header && mouseY <= header + 2 * textsize)
         {
           System.out.println("end date choosen");
 
           if(mouseX > border_left + blank)
           {
-            println("end:"+t.getEnd()+" targetline: "+targetline);
             t.setEnd(targetline);
             border_right = (t.getEnd() * blank) + formX;
           }
